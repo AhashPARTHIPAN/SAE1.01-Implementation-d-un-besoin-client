@@ -1,6 +1,6 @@
 # SAE1.01: Implementation d'un besoin client <sub>*2023-2024*</sub>
 
-Ce travail a été réalisé en binôme avec ()
+Ce travail a été réalisé en binôme avec [safiya-ng](https://github.com/safiya-ng)
 
 ## **Titre: Santa Claus needs you !** 
 
