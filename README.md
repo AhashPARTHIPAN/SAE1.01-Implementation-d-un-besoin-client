@@ -4,7 +4,7 @@ Ce travail a été réalisé en binôme avec [mettre binome]
 
 ## **Titre: Santa Claus needs you !** 
 
-**Sujet**
+*Sujet*
 
 Le Père Noël se fait vieux, il a besoin d'aider pour organiser sa distribution de cadeaux. Il vous prend à l'essai...
 
