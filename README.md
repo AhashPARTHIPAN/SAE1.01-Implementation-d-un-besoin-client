@@ -4,6 +4,8 @@ Ce travail a été réalisé en binôme avec [safiya-ng](https://github.com/safi
 
 ## **Titre: Santa Claus needs you !** 
 
+*Le Père Noël se fait vieux, il a besoin d'aider pour organiser sa distribution de cadeaux. Il vous prend à l'essai...*
+
 ## Description du projet
 
-Ce projet est une mise en situation professionnelle dont l'objectif est de trouver une tournée des villes minimisant la distance parcourue par les rennes du Père Noël. L'entièreté de ce projet a été réalisé en python.
+Ce projet est une mise en situation professionnelle dont l'objectif est de trouver une tournée des villes minimisant la distance parcourue par les rennes du Père Noël. L'entièreté de ce projet a été réalisé en Python.
