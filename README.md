@@ -4,9 +4,8 @@ Ce travail a été réalisé en binôme avec [mettre binome]
 
 ## **Titre: Santa Claus needs you !** 
 
-*Sujet*
+**Sujet**
 
-Le Père Noël se fait vieux, il a besoin d'aider pour organiser sa distribution de cadeaux. Il vous prend à l'essai...
+*Le Père Noël se fait vieux, il a besoin d'aider pour organiser sa distribution de cadeaux. Il vous prend à l'essai...*
 
-
-L'objectif est de chercher une tournée des villes minimisant la distance parcourue par les rennes du Père Noël.
+*L'objectif est de chercher une tournée des villes minimisant la distance parcourue par les rennes du Père Noël.*
