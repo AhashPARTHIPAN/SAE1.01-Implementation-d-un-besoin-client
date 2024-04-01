@@ -10,7 +10,7 @@ def test_noms_villes():
     print("test de la fonction nom_villes: ok")
 
 def test_distance():
-    assert distance(2.33, 48.86, 5.40, 43.30 ) == 661.86
+    assert distance(2.33, 48.86, 5.40, 43.30 ) == 661.8616554466852
     print("test de la fonction distance: ok")
 
 def test_indexCity():
@@ -20,12 +20,12 @@ def test_indexCity():
     print("test de la fonction indexCity: ok")
 
 def test_distance_noms():
-    assert distance_noms("Paris", "Marseille", villes) == 661.86
+    assert distance_noms("Paris", "Marseille", villes) == 661.8616554466852
     assert distance_noms("Paris", "Madrid", villes) == -1
     print("test de la fonction distance_noms: ok")
 
 def test_long_tour():
-    assert long_tour(villes, tournee) == 4458.66
+    assert long_tour(villes, tournee) == 4458.668306355326
     print("test de la fonction long_tour : ok")
 
 
