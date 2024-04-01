@@ -1,3 +1,4 @@
+from random import shuffle
 from math import *
 from numpy import *
 
@@ -6,86 +7,85 @@ from numpy import *
 ##############
 
 def nb_villes(villes):
-    """Retourne le nombre de villes"""
-    return len(villes)//3
-
+    """renvoie le nombre de ville à visiter contenu dans le tableau ville"""
+    return len(villes) // 3
 
 def noms_villes(villes):
-    """Retourne un tableau contenant le nom des villes"""
-    noms_v = []
+    """renvoie le tableau qui contient les noms des villes à visiter"""
+    noms = []
     i = 0
-    while 3*i < len(villes):
-        noms_v.append(villes[3*i])
-        i += 1
-    return noms_v
-
-
-def d2r(nb):
-    return nb*pi/180
-
+    while i < len(villes):
+        noms.append(villes[i])
+        i += 3
+    return noms
 
 def distance(long1, lat1, long2, lat2):
-    """retourne la distance entre les points (long1, lat1) et (long2, lat2)"""
-    lat1 = d2r(lat1)
-    long1 = d2r(long1)
-    lat2 = d2r(lat2)
-    long2 = d2r(long2)
-    R = 6370.7
-    d = R*arccos(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(long2-long1))
-    return d
-
+    """calcule et renvoie la distance entre deux villes grace à leurs coordonnées"""
+    r = 6370.7
+    lat1 *= pi/180
+    lat2 *= pi/180
+    long1 *= pi/180
+    long2 *= pi/180
+    res = r * arccos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(long2 - long1))
+    return round(res, 2)
 
 def indexCity(ville, villes):
-    """Retourne l'indice dans le tableau villes de la ville de nom ville,
-       et -1 si elle n'existe pas
-    """
-    res = -1
-    i = 0
-    while 3*i < len(villes) and villes[3*i] != ville:
-        i += 1
-    if 3*i < len(villes):
-        res = 3*i
-    return res
+    """renvoie l'indice de la ville ville contenu dans le tableau villes, -1 si la ville n'est pas dans le tableau"""
+    if ville in villes:
+        return villes.index(ville)
+    return -1
 
-
-def distance_noms(nom1, nom2, villes):
-    """Retourne la distance entre les villes nom1 et nom2 
-       en fonction de la structure de donnees villes
-    """
-    index1 = indexCity(nom1, villes)
-    index2 = indexCity(nom2, villes)
-
-    if index1 == -1 or index2 == -1:
-        d = -1
-    else:
-        d = distance(villes[index1+1], villes[index1+2],
-                     villes[index2+1], villes[index2+2])
+def distance_noms(nom1,nom2, villes):
+    """calcule et renvoie la distance entre deux villes si les villes sont dans villes, -1 sinon"""
+    ind_v1 = indexCity(nom1, villes)
+    ind_v2 = indexCity(nom2, villes)
+    if ind_v1 == -1 or ind_v2 == -1:
+        return -1
+    d = distance(villes[ind_v1+1], villes[ind_v1+2], villes[ind_v2+1], villes[ind_v2+2])
     return d
 
-
-def lecture_villes(path):
-    """Retourne la structure de donnees villes en fonction des donnees du fichier path"""
-    f_in = open(path, encoding='utf-8', mode='r')
-    villes = []
-    li = f_in.readline()
-    li = li.strip()
-    while li != '':
-        tab_li = li.split(';')
-        villes.append(tab_li[0])
-        villes.append(float(tab_li[1]))
-        villes.append(float(tab_li[2]))
-        li = f_in.readline()
-        li = li.strip()
-    f_in.close()
-    return villes
-
+def lecture(path):
+    """renvoie un tableau (à partir du fichier path) contenant les données sur les villes à visiter"""
+    tab_villes = []
+    fichier = open(path, "r")
+    ligne = fichier.readline()
+    while ligne != "":
+        ligne = ligne.strip().split(";")
+        tab_villes += ligne
+        ligne = fichier.readline()
+    fichier.close()
+    return tab_villes
 
 def long_tour(villes, tournee):
-    """Retourne la longueur d'une tournee en fonction de la structure de donnees villes"""
-    long = 0
+    """prend en parametre un tableau de villes et l'ordre (tournee) et renvoie la longueur de la tournee"""
     i = 0
-    while i+1 < len(tournee):
-        long += distance_noms(tournee[i], tournee[i+1], villes)
+    longueur = 0
+    while i < len(tournee) - 1:
+        longueur += (distance_noms(tournee[i], tournee[i+1], villes))
         i += 1
-    long += distance_noms(tournee[i], tournee[0], villes)
-    return long
+    longueur += (distance_noms(tournee[-1], tournee[0], villes))
+    return longueur
+
+
+#liste de plusieurs villes et leurs longueur et latitude
+villes = ["Paris",2.33,48.86, "Lyon",4.85,45.75, 
+          "Marseille", 5.40,43.30, "Lille",3.06,50.63, 
+          "Strasbourg",7.75,48.57, "Rennes",-1.66,48.11, 
+          "Clermont-Ferrand",3.08,45.77, "Bordeaux", -0.57, 44.83]
+
+#définition d'une tournée (exemple)
+tournee = noms_villes(villes)
+
+#programme qui donne la meilleure tournée
+long_init = long_tour(villes, tournee)
+compt = 0
+while compt < 10000:
+    shuffle(tournee)
+    nouv_long = long_tour(villes, tournee)
+    if nouv_long < long_init:
+        long_init = nouv_long
+        nouv_long = tournee
+    compt += 1
+
+print(round(long_init, 2))
+print(tournee)
