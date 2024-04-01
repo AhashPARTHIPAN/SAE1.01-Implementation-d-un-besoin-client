@@ -9,3 +9,8 @@ Ce travail a été réalisé en binôme avec Safiya Nguyen ( [safiya-ng](https:/
 ## Description du projet
 
 Ce projet est une mise en situation professionnelle dont l'objectif est de trouver une tournée des villes minimisant la distance parcourue par les rennes du Père Noël. L'entièreté de ce projet a été réalisé en Python.
+
+## Instructions
+
+Pour utiliser ces fichiers, **veuillez les mettre dans un même fichier**, vous pouvez mettre les fichiers CSV où vous le voulez tant que vous mettez le bon chemin (path) lors de l'appel de la fonction lecture(path).
+Le fichier test_santa_claus.py donnera deux résultats si vous le lancez qui correspondent respectivement à la longueur totale entre chaque ville de la tournée et la tournée en question.
