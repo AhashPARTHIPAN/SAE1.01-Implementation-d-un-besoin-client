@@ -1,6 +1,6 @@
 # SAE1.01: Implementation d'un besoin client <sub>*2023-2024*</sub>
 
-Ce travail a été réalisé en binôme avec Safiya Nguyen ( [safiya-ng](https://github.com/safiya-ng) ). La suite de cette SAE est la [SAE1.01](https://github.com/AhashPARTHIPAN/SAE1.01-Implementation-d-un-besoin-client).
+Ce travail a été réalisé en binôme avec Safiya Nguyen ( [safiya-ng](https://github.com/safiya-ng) ). La suite de cette SAE est la [SAE1.02](https://github.com/AhashPARTHIPAN/SAE1.02-Comparaison-d-approches-algorithmiques).
 
 ## **Titre: Santa Claus needs you !** 
 
