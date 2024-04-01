@@ -27,7 +27,7 @@ def distance(long1, lat1, long2, lat2):
     long1 *= pi/180
     long2 *= pi/180
     res = r * arccos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(long2 - long1))
-    return round(res, 2)
+    return res
 
 def indexCity(ville, villes):
     """renvoie l'indice de la ville ville contenu dans le tableau villes, -1 si la ville n'est pas dans le tableau"""
@@ -47,11 +47,14 @@ def distance_noms(nom1,nom2, villes):
 def lecture(path):
     """renvoie un tableau (à partir du fichier path) contenant les données sur les villes à visiter"""
     tab_villes = []
-    fichier = open(path, "r")
+    fichier = open(path, encoding='utf-8', mode = 'r')
     ligne = fichier.readline()
+    ligne = ligne.strip()
     while ligne != "":
-        ligne = ligne.strip().split(";")
-        tab_villes += ligne
+        t_ligne = ligne.split(";")
+        tab_villes.append(t_ligne[0])
+        tab_villes.append(float(t_ligne[1]))
+        tab_villes.append(float(t_ligne[2]))
         ligne = fichier.readline()
     fichier.close()
     return tab_villes
