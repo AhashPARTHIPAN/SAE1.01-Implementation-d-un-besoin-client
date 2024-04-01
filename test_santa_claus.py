@@ -11,23 +11,22 @@ def test_noms_villes():
 
 def test_distance():
     assert distance(2.33, 48.86, 5.40, 43.30 ) == 661.86
-    print("Test ok")
+    print("test de la fonction distance: ok")
 
 def test_indexCity():
     assert indexCity("Paris", villes) == 0
     assert indexCity("Clermont-Ferrand",villes) == 18
     assert indexCity("Villetaneuse",villes) == -1
-    print("test de la fonction indexCity(): ok")
+    print("test de la fonction indexCity: ok")
 
 def test_distance_noms():
     assert distance_noms("Paris", "Marseille", villes) == 661.86
     assert distance_noms("Paris", "Madrid", villes) == -1
-    print("Test de la fonction distance_noms(): ok")
+    print("test de la fonction distance_noms: ok")
 
 def test_long_tour():
     assert long_tour(villes, tournee) == 4458.66
-    print("Test de la fonction long_tour : validé")
-
+    print("test de la fonction long_tour : ok")
 
 
 villes = ["Paris",2.33,48.86, "Lyon",4.85,45.75, 
@@ -39,26 +38,23 @@ villes += ["Toulouse", 1.43, 46.60] + ["Grenoble", 5.72, 45.18]
 
 tournee = noms_villes(villes)
 
-#test_nb_villes()
-#test_noms_villes()
-#test_distance()
-#test_indexCity() 
-#test_distance_noms()
-
-#lecture(path)
-
-#test_long_tour()
+test_nb_villes()
+test_noms_villes()
+test_distance()
+test_indexCity() 
+test_distance_noms()
+test_long_tour()
 
 
 long_init = long_tour(villes, tournee)
-jsp = 0
-while jsp < 10000:
+compteur = 0
+while compteur < 10000:
     shuffle(tournee)
     nouv_long = long_tour(villes, tournee)
     if nouv_long < long_init:
         long_init = nouv_long
         nouv_long = tournee
-    jsp += 1
+    compteur += 1
 
 print(round(long_init, 2))
 print(tournee)
