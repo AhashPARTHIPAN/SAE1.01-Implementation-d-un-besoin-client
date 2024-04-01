@@ -15,4 +15,6 @@ Ce projet est une mise en situation professionnelle dont l'objectif est de trouv
 Pour utiliser ces fichiers, **veuillez les mettre dans un même répertoire**, vous pouvez mettre les fichiers CSV où vous le voulez tant que vous mettez le bon chemin (path) lors de l'appel de la fonction lecture(path).
 
 
-Le fichier test_santa_claus.py donnera deux résultats si vous le lancez qui correspondent respectivement à la longueur totale entre chaque ville de la tournée et la tournée en question.
+Si vous lancez le fichier test_santa_claus.py, vous obtiendrez plusieurs réponses:
+  - les premières lignes indiquant que chaque fonction de test fonctionnent.
+  - les deux dernières lignes sont respectivement la longueur de la tournée et la tournée en question.
