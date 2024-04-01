@@ -1,6 +1,6 @@
-from random import shuffle
 from math import *
 from numpy import *
+from random import shuffle
 
 ##############
 # SAE S01.01 #
