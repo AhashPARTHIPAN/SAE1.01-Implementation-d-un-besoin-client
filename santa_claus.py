@@ -65,27 +65,3 @@ def long_tour(villes, tournee):
         i += 1
     longueur += (distance_noms(tournee[-1], tournee[0], villes))
     return longueur
-
-
-#liste de plusieurs villes et leurs longueur et latitude
-villes = ["Paris",2.33,48.86, "Lyon",4.85,45.75, 
-          "Marseille", 5.40,43.30, "Lille",3.06,50.63, 
-          "Strasbourg",7.75,48.57, "Rennes",-1.66,48.11, 
-          "Clermont-Ferrand",3.08,45.77, "Bordeaux", -0.57, 44.83]
-
-#définition d'une tournée (exemple)
-tournee = noms_villes(villes)
-
-#programme qui donne la meilleure tournée
-long_init = long_tour(villes, tournee)
-compt = 0
-while compt < 10000:
-    shuffle(tournee)
-    nouv_long = long_tour(villes, tournee)
-    if nouv_long < long_init:
-        long_init = nouv_long
-        nouv_long = tournee
-    compt += 1
-
-print(round(long_init, 2))
-print(tournee)
