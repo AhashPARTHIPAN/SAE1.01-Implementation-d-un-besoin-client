@@ -10,6 +10,23 @@ Ce travail a été réalisé en binôme avec Safiya NGUYEN ( [safiya-ng](https:/
 
 Ce projet est une mise en situation professionnelle dont l'objectif est de trouver une tournée des villes minimisant la distance parcourue par les rennes du Père Noël. L'entièreté de ce projet a été réalisé en Python.
 
+## Structure du projet
+
+```bash
+SAE1.01-Implementation-d-un-besoin-client-main
+    │   README.md
+    │   santa_claus.py
+    │   test_santa_claus.py
+    │
+    └───fichiers_csv_villes
+            africa.csv
+            asia.csv
+            europe.csv
+            north-america.csv
+            oceania.csv
+            south-america.csv
+```
+
 ## Instructions
 
 Pour utiliser ces fichiers, **veuillez les mettre dans un même répertoire**, vous pouvez mettre les fichiers CSV où vous le voulez tant que vous mettez le bon chemin (path) lors de l'appel de la fonction lecture(path).
